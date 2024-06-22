@@ -7,7 +7,7 @@ const router=express.Router({mergeParams:true});
 router.use(auth.protect);
 router.route("/")
     .get(reviewController.getAllReviews)
-    .post(auth.restrictTo('user'),reviewController.setTourAndUserId,reviewController.createReview);
+    .post(auth.restrictTo('user'),reviewController.isBooked,reviewController.setTourAndUserId,reviewController.createReview);
 
 router.route("/:id")
     .get(reviewController.getOneReview)
