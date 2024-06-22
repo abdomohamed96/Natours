@@ -56,6 +56,7 @@ exports.getOneFactory=(Model,populatOptions)=>catchAsync (async (req,res,next)=>
 exports.getAllFactory=Model=>catchAsync(async (req,res,next)=>{
     let filerObj={};
     if(req.params.tourId) filerObj={tour:req.params.tourId};
+    if(req.params.userId) filerObj={user:req.params.userId};
 
     const apiFeature= new APIFeature(Model.find(filerObj),req.query)
         .filter()

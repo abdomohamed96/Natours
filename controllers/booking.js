@@ -48,3 +48,11 @@ exports.createBookingCheckout=catchAsync(async (req,res,next)=>{
     await Booking.create({tour,user,price});
     res.redirect(req.originalUrl.split('?')[0]);
 })
+exports.isBooked=catchAsync(async (req,res,next)=>{
+    // get booking of user that has tourId
+    const booking=await Booking.findOne({user:req.user.id,tour:req.params.tourId});
+    if(!booking){
+        return next(new AppError('You are allowed to review booked tours only',400));
+    }
+    next();
+})

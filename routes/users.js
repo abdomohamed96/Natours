@@ -3,7 +3,7 @@ const router = express.Router();
 const auth=require("../controllers/authController")
 const {forgotPassword} = require("../controllers/authController");
 const {updateMe, deleteMe, deleteUser, updateUser,getUser, getAllUsers, getMe, uploadUserPhoto, resizeUserPhoto} = require("../controllers/userController");
-
+const bookingRouter=require("./booking")
 /* GET users listing. */
 router.post('/signup', auth.signup);
 router.post('/login', auth.login);
@@ -20,5 +20,6 @@ router.get("/me",getMe,getUser);
 router.use(auth.restrictTo('admin'));
 router.route("/:id").delete(deleteUser).patch(updateUser).get(getUser);
 router.route('/').get(getAllUsers);
+router.use('/:userId/bookings',bookingRouter);
 
 module.exports = router;

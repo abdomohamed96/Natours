@@ -9,7 +9,7 @@ exports.setTourAndUserId=(req,res,next)=>{
     next();
 }
 
-exports.isBooked=catchAsync(async (req,res,next)=>{
+exports.isSoldOut=catchAsync(async (req,res,next)=>{
     // get booking of user that has tourId
     const booking=await Booking.findOne({user:req.user.id,tour:req.params.tourId});
     if(!booking){
