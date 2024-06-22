@@ -18,6 +18,7 @@ const bookingController=require("./controllers/booking")
 const {static} = require("express");
 const compression=require('compression');
 const cors=require('cors')
+const bodyParser=require('body-parser');
 const app=express();
 app.set('view engine','pug');
 app.set('views',path.join(__dirname,'views'));
@@ -83,7 +84,7 @@ app.use(hpp({
   whitelist:['duration','ratingsQuantity','ratingsAverage','maxGroupSize','price','difficulty']
 }));
 app.use('/api',limiter);
-app.post('/webhook-checkout',express.raw({
+app.post('/webhook-checkout',bodyParser.raw({
   type:'application/json'
 }),bookingController.webhockCheckout);
 //here because webhockCheckout needs data in raw form not json
