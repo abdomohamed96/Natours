@@ -85,10 +85,11 @@ const createBookingCheckout=async session=>{
     const price=session.line_items[0].price_data.unit_amount/100;
     await Booking.create({tour:session.client_reference_id,user:user.id,price})
 }
-exports.webhockCheckout=(req,res,next)=>{
+exports.webhockCheckout=(req,res)=>{
     let event;
     try{
         const signature=req.headers['stripe-signature'];
+        console.log(`🔥🔥🔥`,signature,req.body,process.env.STRIPE_WEBHOOK_SECRE);
         event=stripe.webhooks.constructEvent(req.body,signature,process.env.STRIPE_WEBHOOK_SECRET);
 
     }catch (err){
