@@ -90,7 +90,7 @@ exports.webhockCheckout=(req,res)=>{
     let event;
     try{
         const signature=req.headers['stripe-signature'];
-        console.log(`🔥🔥🔥`,signature,req.body,process.env.STRIPE_WEBHOOK_SECRE);
+        console.log(`🔥🔥🔥`,process.env.STRIPE_WEBHOOK_SECRE);
         event=stripe.webhooks.constructEvent(req.body,signature,process.env.STRIPE_WEBHOOK_SECRET);
 
     }catch (err){
