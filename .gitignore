@@ -1,0 +1,5 @@
+node_modules
+*.env
+.idea
+dev-data
+models.iml
