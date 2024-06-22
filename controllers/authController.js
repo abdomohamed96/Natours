@@ -122,7 +122,6 @@ exports.forgotPassword=catchAsync(async (req,res,next)=>{
     const resetToken=user.createPasswordResetToken();
     await user.save({validateBeforeSave: false});
     const resetUrl=`${req.protocol}://${req.get('host')}/api/v1/${resetToken}`;
-    console.log(resetUrl);
     try{
         await new Email(user,resetUrl).sendPasswordReset();
         res.status(200).json({
@@ -134,7 +133,6 @@ exports.forgotPassword=catchAsync(async (req,res,next)=>{
         this.passwordResetToken=undefined;
         this.passwordResetExpires=undefined;
         await user.save({validateBeforeSave: false});
-        console.log(err)
         return next(new AppError('There is an error sending the email,Try again later',500))
     }
 
@@ -159,7 +157,6 @@ exports.resetPassword=catchAsync(async (req,res,next)=>{
 exports.udatePassword=catchAsync(async (req,res,next)=>{
    //check if the previous password is correct
     const user=await User.findById(req.user._id).select("+password");
-    console.log(user)
     if(!(await user.correctPassword(req.body.passwordCurrent))){
         next(new AppError('Your  current password is not correct'))
     }

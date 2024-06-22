@@ -15,6 +15,7 @@ const reviewRouter=require("./routes/review")
 const viewRouter=require("./routes/view")
 const bookingRouter=require("./routes/booking")
 const {static} = require("express");
+const compression=require('compression');
 const app=express();
 app.set('view engine','pug');
 app.set('views',path.join(__dirname,'views'));
@@ -57,6 +58,7 @@ app.use(
       },
     })
 );
+
 const limiter=rateLimit({
   max:100,
   windowMs:60*60*1000,
@@ -64,7 +66,7 @@ const limiter=rateLimit({
 })
 //Data sanitization against NoSQL injection
 app.use(mongoSantize())
-
+app.use(compression());//for text send in responses
 //Data sanitize against from xss
 app.use(xss());
 

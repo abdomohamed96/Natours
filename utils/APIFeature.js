@@ -6,11 +6,9 @@ module.exports=class {
     }
     filter(){
         const queryObj={...this.queryStr}
-        console.log(queryObj)
         const excludedFields=['sort','limit','page','fields'];
         excludedFields.forEach((el)=>delete queryObj[el]);
         let queryStr=JSON.stringify(queryObj);
-        console.log(JSON.parse(queryStr));
         queryStr=queryStr.replace(/\b(lte|lt|gt|gte)\b/g,match=>`$${match}`);
 
         this.query.find(JSON.parse(queryStr));

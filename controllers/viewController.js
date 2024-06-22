@@ -20,7 +20,6 @@ exports.getTourPage=catchAsync(async (req,res,next)=>{
 exports.getOverviewPage=catchAsync(async (req,res,next)=>{
     //get all tour
     const tours=await Tour.find();
-    // console.log(tours[0].imageCover)
     res.status(200).render('overview',{
         title:'All tours',
         tours
@@ -28,7 +27,6 @@ exports.getOverviewPage=catchAsync(async (req,res,next)=>{
 })
 exports.login=catchAsync(async (req,res,next)=>{
     const tours=await Tour.find();
-    // console.log(tours[0].imageCover)
     res.status(200)
         .render('login',{
         title:'login',
@@ -50,9 +48,7 @@ exports.getAccount=catchAsync(async (req,res,next)=>{
 })
 exports.getMyTours=catchAsync(async (req,res,next)=>{
     const bookings=await Booking.find({user:req.user.id});
-    console.log(bookings);
     const tourIDs=bookings.map(el=>el.tour.id);
-    console.log(tourIDs);
     const tours=await Tour.find({_id:{$in:tourIDs}})
     res.status(200)
         .render('overview',{

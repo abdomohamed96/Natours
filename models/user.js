@@ -75,7 +75,6 @@ userSchema.pre(/^find/,function (next){
     next();
 })
 userSchema.methods.correctPassword=async function (data){
-    console.log(this)
     const correct= await bcrypt.compare(data,this.password);
     return correct;
 }

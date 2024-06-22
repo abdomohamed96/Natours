@@ -66,7 +66,6 @@ function formatDate(date) {
 }
 
 function isSameDate(date1, date2) {
-    console.log(formatDate(date1))
     return formatDate(date1) === formatDate(date2);
 }
 exports.isSoldOut=catchAsync(async (req,res,next)=>{

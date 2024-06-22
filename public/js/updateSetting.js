@@ -2,9 +2,8 @@ import axios from "axios";
 import {showAlert} from "./showAlert";
 export const updateSetting=async (data,type)=>{
     try{
-        console.log(data);
-        const url=type==='password'?'http://localhost:3000/api/v1/users/updatePassword'
-            :'http://localhost:3000/api/v1/users/updateMe';
+        const url=type==='password'?'/api/v1/users/updatePassword'
+            :'/api/v1/users/updateMe';
         const res =await axios({
             method:'PATCH',
             url,

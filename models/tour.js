@@ -30,7 +30,6 @@ const tourSchema=new mongoose.Schema({
             message:"discount price {VALUE} should be less than price",
             validator:function (val){
                 //this ==> document
-                console.log(this);
                 return this.price>val;
 
             }
@@ -175,17 +174,6 @@ tourSchema.pre(/^find/,function (next){
     })
     next();
 })
-tourSchema.post(/^find/,function (docs,next){
-    console.log(Date.now()-this.start,"millisecends");
-    next();
-})
 
-//aggregation middlewares
-// tourSchema.pre('aggregate',function (next){
-//     //"this" current aggregation object
-//     //modify the object itself
-//     this.pipeline().unshift({$match:{secretTour:{$ne:true}}})
-//     next();
-// })
 const Tour=mongoose.model("Tour",tourSchema);
 module.exports=Tour;
