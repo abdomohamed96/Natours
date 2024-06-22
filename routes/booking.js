@@ -9,11 +9,11 @@ router.get('/checkout-session/:tourId',bookingController.getCheckoutSession);
 router.use(auth.restrictTo('admin','lead-guide'));
 router.route("/")
     .get(bookingController.getAllBookings)
-    .post(bookingController.createBooking);
+    .post(bookingController.isSoldOut,bookingController.createBooking);
 
-    router.route("/:id")
-    .get(bookingController.getOneBooking)
-    .delete(bookingController.deleteBooking)
-    .patch(bookingController.updateBooking)
+router.route("/:id")
+.get(bookingController.getOneBooking)
+.delete(bookingController.deleteBooking)
+.patch(bookingController.updateBooking)
 
 module.exports=router;

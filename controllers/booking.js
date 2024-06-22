@@ -56,3 +56,33 @@ exports.isBooked=catchAsync(async (req,res,next)=>{
     }
     next();
 })
+function formatDate(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(d.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+}
+
+function isSameDate(date1, date2) {
+    console.log(formatDate(date1))
+    return formatDate(date1) === formatDate(date2);
+}
+exports.isSoldOut=catchAsync(async (req,res,next)=>{
+    req.body.tour=req.body.tour||req.params.tourId;
+    const tour=await Tour.findById(req.body.tour);
+    if(!tour){
+        return next(new AppError('This tour is not exists. Please find another one ',400));
+    }
+    const tourInstanace=tour.startDates.find(el=>isSameDate(el.date,req.body.date))
+    if(!tourInstanace||tourInstanace.soldOut){
+        return next(new AppError('This date is not exists or sold out,Please choose another date ',400));
+    }
+    tourInstanace.participation+=1
+    if(tourInstanace.participation>=tour.maxGroupSize){
+        tourInstanace.soldOut=true;
+    }
+    const newT=await tour.save();
+   next();
+})

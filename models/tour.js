@@ -75,7 +75,17 @@ const tourSchema=new mongoose.Schema({
         type:Number,
         required:[true,"tour should have price"]
     },
-    startDates:[Date],
+    startDates:[{
+        soldOut:{
+            type:Boolean,
+            default:false,
+        },
+        date:Date,
+        participation:{
+            type:Number,
+            default:0
+        }
+    }],
     slug:String,
     secretTour:{
         type:Boolean,

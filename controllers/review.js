@@ -9,14 +9,6 @@ exports.setTourAndUserId=(req,res,next)=>{
     next();
 }
 
-exports.isSoldOut=catchAsync(async (req,res,next)=>{
-    // get booking of user that has tourId
-    const booking=await Booking.findOne({user:req.user.id,tour:req.params.tourId});
-    if(!booking){
-        return next(new AppError('You are allowed to review booked tours only',400));
-    }
-    next();
-})
 exports.getAllReviews=getAllFactory(Review);
 exports.deleteReview=deleteFactory(Review);
 exports.updateReview=updateFactory(Review);
