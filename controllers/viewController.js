@@ -35,6 +35,13 @@ exports.login=catchAsync(async (req,res,next)=>{
         tours
     })
 })
+
+exports.signup=catchAsync(async (req,res,next)=>{
+    res.status(200)
+        .render('signup',{
+            title:'signup'
+        })
+})
 exports.getAccount=catchAsync(async (req,res,next)=>{
     res.status(200)
         .render('account',{
