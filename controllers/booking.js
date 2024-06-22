@@ -86,12 +86,12 @@ const createBookingCheckout=async session=>{
     console.log('🔥🔥🔥',user,price,session.client_reference_id);
     await Booking.create({tour:session.client_reference_id,user:user.id,price})
 }
+console.log(process.env.STRIPE_WEBHOOK_SECRET)
 exports.webhockCheckout=(req,res)=>{
     let event;
     try{
         const signature=req.headers['stripe-signature'];
-        console.log(`🔥🔥🔥`,proccess.env.STRIPE_WEBHOOK_SECRE);
-        event=stripe.webhooks.constructEvent(req.body,signature,proccess.env.STRIPE_WEBHOOK_SECRET);
+        event=stripe.webhooks.constructEvent(req.body,signature,process.env.STRIPE_WEBHOOK_SECRET);
 
     }catch (err){
         return res.status(400).send(`Webhook error${err.message}`)
