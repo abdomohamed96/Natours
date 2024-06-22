@@ -16,13 +16,20 @@ const viewRouter=require("./routes/view")
 const bookingRouter=require("./routes/booking")
 const {static} = require("express");
 const compression=require('compression');
+const cors=require('cors')
 const app=express();
 app.set('view engine','pug');
 app.set('views',path.join(__dirname,'views'));
 //middlewares
+//Implement CORS
+app.use(cors());
+// app.use(cors({
+//   origin:'https://forntend.come',//this only ollowed
+// }));
+//here we apply preflight request
+app.options('*',cors());
 app.use(express.static(path.join(__dirname,'public')));
 //Set security headers
-// app.use(helmet());
 app.use(
     helmet({
       contentSecurityPolicy: {
