@@ -14,6 +14,7 @@ const userRouter=require("./routes/users");
 const reviewRouter=require("./routes/review")
 const viewRouter=require("./routes/view")
 const bookingRouter=require("./routes/booking")
+const bookingController=require("./controllers/booking")
 const {static} = require("express");
 const compression=require('compression');
 const cors=require('cors')
@@ -82,7 +83,10 @@ app.use(hpp({
   whitelist:['duration','ratingsQuantity','ratingsAverage','maxGroupSize','price','difficulty']
 }));
 app.use('/api',limiter);
-
+app.post('/webhook-checkout',express.raw({
+  type:'application/json'
+}),bookingController.webhockCheckout);
+//here because webhockCheckout needs data in raw form not json
 app.use(cookieParser())
 app.use(express.json({limit:'10kb'}));// 10 kilo byte as max for denial attacks
 app.use(express.urlencoded({extended:true,limit:'10kb'}));// for sending requests from forms
