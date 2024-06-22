@@ -7,7 +7,7 @@ const mongoose=require("mongoose");
 const dotenv=require("dotenv");
 dotenv.config({path:"./config.env"})
 const PORT=process.env.PORT||3000;
-const server=app.listen(PORT,"127.0.0.1",async ()=>{
+const server=app.listen(PORT,async ()=>{
     console.log(`the server is running at ${process.env.PORT}`);
     await mongoose.connect(process.env.CONNECTION_STRING,{
         useCreateIndex:true,
