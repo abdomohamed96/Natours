@@ -10,6 +10,9 @@
 ## 🎥 [Demo Video](https://drive.google.com/file/d/1kba02sWffmhaXM_Kw8uQXUjUDgKMxow2/view?usp=sharing)
 
 ---
+##  [API Documentation](https://documenter.getpostman.com/view/32602280/2sA2r556Kq)
+
+---
 
 ## Table of Contents
 
