@@ -1,6 +1,6 @@
 # Natours
 
-![Natours Logo](https://raw.githubusercontent.com/yourusername/Natours/main/natous_logo.png)
+![Natours Logo](https://github.com/abdomohamed96/Natours/blob/main/natous_logo.png)
 
 **Natours** is an incredible tour booking site built with Node.js. It offers a wide range of features, enabling users to search and book tours, manage their bookings, and update their profiles. The site includes authentication and authorization functionalities, allowing users to securely log in and log out. On the tour page, users can explore tours on a map, read user reviews, and view ratings. Additionally, users can make payments for tours using a credit card.
 
