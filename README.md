@@ -23,10 +23,11 @@
 - [Contributing](#contributing)
 
 ---
-
 ## 🎥 Demo Video
 
-[https://github.com/abdomohamed96/Natours/blob/main/Demo/Natour_Demo.mp4]
+[![Watch the video](https://github.com/abdomohamed96/Natours/blob/main/public/img/logo-green.png?raw=true)](https://github.com/abdomohamed96/Natours/blob/main/Demo/Natour_Demo.mp4)
+
+[Click here to watch the demo video](https://github.com/abdomohamed96/Natours/blob/main/Demo/Natour_Demo.mp4)
 
 ---
 
