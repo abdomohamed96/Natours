@@ -7,6 +7,9 @@
 ## 🌐 [Visit the live app](https://natours-uijp.onrender.com/)
 
 ---
+## 🎥 [Demo Video](https://drive.google.com/file/d/1kba02sWffmhaXM_Kw8uQXUjUDgKMxow2/view?usp=sharing)
+
+---
 
 ## Table of Contents
 
@@ -21,15 +24,6 @@
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
-
----
-
-## 🎥 Demo Video
-
-[![Watch the video](https://github.com/abdomohamed96/Natours/blob/main/public/img/logo-green.png?raw=true)](https://drive.google.com/file/d/1kba02sWffmhaXM_Kw8uQXUjUDgKMxow2/view?usp=drive_link)
-
-<iframe width="560" height="315" src="https://drive.google.com/file/d/1kba02sWffmhaXM_Kw8uQXUjUDgKMxow2/view?usp=drive_link" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 ---
 
