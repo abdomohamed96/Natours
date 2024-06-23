@@ -12,7 +12,7 @@ exports.getCheckoutSession=catchAsync(async (req,res,next)=>{
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         mode: 'payment', // Add this line to specify the mode
-        success_url: `${req.protocol}://${req.get('host')}/my-tours`,
+        success_url: `${req.protocol}://${req.get('host')}/my-tours?alert=booking`,
         cancel_url: `${req.protocol}://${req.get('host')}/tour/${tour.slug}`,
         customer_email: req.user.email,
         client_reference_id: req.params.tourId,
@@ -81,14 +81,11 @@ exports.isSoldOut=catchAsync(async (req,res,next)=>{
    next();
 })
 const createBookingCheckout=async session=>{
-    console.log(session)
     const user=await User.findOne({email:session.customer_email});
     const price=session.amount_total/100;
-    console.log('🔥🔥🔥',user,price,session.client_reference_id);
     await Booking.create({tour:session.client_reference_id,user:user.id,price})
 }
-console.log(process.env.STRIPE_WEBHOOK_SECRET)
-exports.webhockCheckout=(req,res)=>{
+exports.webhockCheckout=async (req,res)=>{
     let event;
     try{
         const signature=req.headers['stripe-signature'];
@@ -98,7 +95,7 @@ exports.webhockCheckout=(req,res)=>{
         return res.status(400).send(`Webhook error${err.message}`)
     }
     if(event.type==='checkout.session.completed'){
-        createBookingCheckout(event.data.object);
+        await createBookingCheckout(event.data.object);
     }
     res.status(200).json({received:true})
 }

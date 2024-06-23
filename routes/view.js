@@ -2,7 +2,7 @@ const express = require('express');
 const viewController=require("../controllers/viewController");
 const { isLoggedIn, protect} = require("../controllers/authController");
 const router=express.Router();
-
+router.use(viewController.alerts);
 router.route('/').get(isLoggedIn,viewController.getOverviewPage);
 router.route('/tours/:slug').get(isLoggedIn,viewController.getTourPage);
 router.route('/login').get(isLoggedIn,viewController.login);
