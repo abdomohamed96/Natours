@@ -26,7 +26,7 @@
 
 ## 🎥 Demo Video
 
-[![Watch the video](https://github.com/abdomohamed96/Natours/blob/main/public/img/logo-green.png?raw=true)](https://youtu.be/k9YmZq3gwqA)
+[![Watch the video](https://github.com/abdomohamed96/Natours/blob/main/public/img/logo-green.png?raw=true)](https://drive.google.com/file/d/1kba02sWffmhaXM_Kw8uQXUjUDgKMxow2/view?usp=drive_link)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/k9YmZq3gwqA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
