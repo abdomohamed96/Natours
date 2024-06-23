@@ -1,12 +1,15 @@
-# Natours
+![Natours Logo](https://github.com/abdomohamed96/Natours/blob/main/public/img/logo-green.png?raw=true)
 
-![Natours Logo](https://github.com/abdomohamed96/Natours/blob/main/natous_logo.png)
+**Natours** is an exceptional tour booking site built with Node.js. It offers a wide range of features, enabling users to search and book tours, manage their bookings, and update their profiles. The site includes authentication and authorization functionalities, allowing users to securely log in and log out. On the tour page, users can explore tours on a map, read user reviews, and view ratings. Additionally, users can make payments for tours using a credit card.
 
-**Natours** is an incredible tour booking site built with Node.js. It offers a wide range of features, enabling users to search and book tours, manage their bookings, and update their profiles. The site includes authentication and authorization functionalities, allowing users to securely log in and log out. On the tour page, users can explore tours on a map, read user reviews, and view ratings. Additionally, users can make payments for tours using a credit card.
+---
 
-# [Visit the live app](https://natours-uijp.onrender.com/)
+## 🌐 [Visit the live app](https://natours-uijp.onrender.com/)
+
+---
 
 ## Table of Contents
+
 - [Demo Video](#demo-video)
 - [Features and Technologies](#features-and-technologies)
     - [Database and Models](#database-and-models)
@@ -19,10 +22,15 @@
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 
-## Demo Video
+---
+
+## 🎥 Demo Video
+
 [Include a link to your demo video here]
 
-## Features and Technologies
+---
+
+## ✨ Features and Technologies
 
 ### Database and Models
 
@@ -72,7 +80,9 @@
 - **Deployment to Render**: Deploying the application to Render with HTTPS support and proper termination handling.
 - **Environment Configuration**: Managing different environments for development and production.
 
-## Technologies Used
+---
+
+## 🛠️ Technologies Used
 
 - **Node.js**: JavaScript runtime built on Chrome's V8 JavaScript engine.
 - **Express**: Fast, unopinionated, minimalist web framework for Node.js.
@@ -91,15 +101,17 @@
 - **Bcrypt**: Library to hash passwords.
 - **Validator**: Library to validate and sanitize strings.
 
-## Getting Started
+---
+
+## 🚀 Getting Started
 
 To get started with Natours, follow these steps:
 
 1. **Clone the Repository**:
-    ```sh
-    git clone git@github.com:abdomohamed96/Natours.git
-    cd Natours
-    ```
+   ```bash
+   git clone git@github.com:abdomohamed96/Natours.git
+   cd Natours
+
 
 2. **Install Dependencies**:
     ```sh
