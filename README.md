@@ -23,11 +23,13 @@
 - [Contributing](#contributing)
 
 ---
+
 ## 🎥 Demo Video
 
-[![Watch the video](https://github.com/abdomohamed96/Natours/blob/main/public/img/logo-green.png?raw=true)](https://github.com/abdomohamed96/Natours/blob/main/Demo/Natour_Demo.mp4)
+[![Watch the video](https://img.youtube.com/vi/k9YmZq3gwqA/maxresdefault.jpg)](https://youtu.be/k9YmZq3gwqA)
 
-[Click here to watch the demo video](https://github.com/abdomohamed96/Natours/blob/main/Demo/Natour_Demo.mp4)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/k9YmZq3gwqA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ---
 
