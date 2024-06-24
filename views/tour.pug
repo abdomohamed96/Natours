@@ -43,7 +43,7 @@ block content
             div
                 .overview-box__group
                     h2.heading-secondary.ma-bt-lg Quick facts
-                    +overviewBox('Next date',tour.startDates[0].toLocaleString('en-us',{month:'long',year:'numeric'}),'calendar')
+                    +overviewBox('Next date',tour.startDates[0].date.toLocaleString('en-us',{month:'long',year:'numeric'}),'calendar')
                     +overviewBox('Participants',`${tour.maxGroupSize} people`,'user')
                     +overviewBox('Rating',`${tour.ratingsAverage} / 5`,'star')
                     +overviewBox('Difficulty',`${tour.difficulty}`,'trending-up')

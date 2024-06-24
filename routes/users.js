@@ -14,7 +14,7 @@ router.patch('/resetPassword/:resetToken', auth.resetPassword);
 router.use(auth.protect);
 router.patch('/updatePassword',auth.udatePassword);
 router.patch("/updateMe",uploadUserPhoto,resizeUserPhoto,updateMe)
-router.patch("/deleteMe",deleteMe)
+router.delete("/deleteMe",deleteMe)
 router.get("/me",getMe,getUser);
 
 router.use(auth.restrictTo('admin'));
