@@ -7,6 +7,12 @@
 ## 🌐 [Visit the live app](https://natours-uijp.onrender.com/)
 
 ---
+## 🎥 [Demo Video](https://drive.google.com/file/d/1kba02sWffmhaXM_Kw8uQXUjUDgKMxow2/view?usp=sharing)
+
+---
+##  [API Documentation](https://documenter.getpostman.com/view/32602280/2sA2r556Kq)
+
+---
 
 ## Table of Contents
 
@@ -21,12 +27,6 @@
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
-
----
-
-## 🎥 Demo Video
-
-[Include a link to your demo video here]
 
 ---
 
