@@ -7,7 +7,7 @@
 ## 🌐 [Visit the live app](https://natours-uijp.onrender.com/)
 
 ---
-## 🎥 [Demo Video](https://drive.google.com/file/d/1kba02sWffmhaXM_Kw8uQXUjUDgKMxow2/view?usp=sharing)
+## 🎥 [Demo Video](https://drive.google.com/file/d/1PcoduKeBm3BAwUspigGX21TE_Pkxt_jH/view?usp=drive_link)
 
 ---
 ##  [API Documentation](https://documenter.getpostman.com/view/32602280/2sA2r556Kq)
